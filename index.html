@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+  <link rel="stylesheet" type="text/css" href="css/reset.css" />
+  <link rel="stylesheet" type="text/css" href="css/play.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/ease-my.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/main3.js"></script>
+  <script src="js/aos.js"></script>
+<style>
+*{margin:0;padding:0;}
+li{list-style: none;}
+header{width: 100%;height: 1020px;background:url(images/headerbg.jpg) no-repeat -290px 0;}
+header div#header1{width: 100%;height: 86px;background:rgba(0,0,0,0.8);}
+header div#header1 ul{float:left;}
+header div#header1 ul.header11{width: 22%;height: 86px;}
+header div#header1 ul.header11 li{width: 67%;height: 86px;margin-left:33%;}
+header div#header1 ul.header12{width: 58%;height: 86px;position: relative;overflow:hidden;margin-left:3%;}
+header div#header1 ul.header12 li{width: 14%;height: 86px;float:left;font-size:17px;text-align:center;font-family:"微软雅黑";position: relative;z-index: 2;color:#0f0;}
+header div#header1 ul.header12 li p{margin-top:25px;}
+header div#header1 ul.header12 li span{font-size:15px;}
+header div#header1 ul.header12 li.bg{width: 14%;height: 82px;overflow:hidden;position: absolute;top:0;left:0;z-index:1;border-bottom:4px solid #0f0;background:rgba(255,0,0,0.2);}
+header div#header1 ul.header12 div{background:url(images/aaaa.jpg) no-repeat -206px -26px;position:absolute;top:86px;width: 100%;background-size: 130%;}
+header div#header1 ul.header12 div dl{float:left;width: 14%;height: 500px;}
+header div#header1 ul.header12 div dl a{color:#ccc;text-decoration: none;font-family: "微软雅黑";}
+header div#header1 ul.header12 div dl dt{width: 100%;height: 24px;font-size: 15px;text-align:center;line-height:24px;margin-top:12px;}
+header div#header1 ul.header12 div dl a:hover{color:#f00;font-weight: bold;}
+header div#header1 ul.header13{width: 14%;height: 86px;}
+header div#header1 ul.header13 li{float:left;}
+header div#header1 ul.header13 li.header131{width: 35%;height: 86px;background:url(images/index.png) no-repeat -180px 20px;}
+header div#header1 ul.header13 li.header132{width: 60%;height: 60px;margin-top: 26px;line-height:20px;font-size: 16px; color:#fff;}
+header div#header1 ul.header13 li.header132 span{font-size:11px;color:#ccc;}
+header div{float:left;}
+#news{width:30%;margin-top:440px;height: 320px;border:1px solid #000;background:rgba(0,0,0,0.8);}
+#news span{display:block;font-size:14px;font-weight:bold;background: #000;margin-right:-4px;width: 9%;height: 22px;float:left;padding:10px 24px;}
+#news span.ono{color:#fff;background:#000;border-bottom:2px solid #0f0;}
+#news div{width: 100%;height: 274px;border-top:2px solid #00f;display:none;}
+#news div.ono{display:block;}
+#news div.ono li.ono1{width: 90%;height: 40px;border:1px solid #000;margin-left:5%;text-align: center;line-height:40px;font-weight:bold;color:#0f0;font-size:18px;letter-spacing: 4px;background:rgba(0,255,0,0.2);}
+#news div.ono li{width: 90%;height: 32px;line-height: 32px;text-align:left;font-size:14px;color:#fff;margin-left:5%;}
+#news div.ono li p{color:#ccc;font-size:12px;float:right;}
+header div.download{width: 18%;height: 320px;margin-top:440px;}
+header div.download ul.download1{width: 96%;height: 128px;background:url(images/index.png) no-repeat 0 -220px;}
+header div.download ul.download1 img{width: 100%;height: 128px;opacity:0.6;}
+header div.download ul{width: 100%;height:96px;}
+header div.download ul.download2{background:url(images/index.png) no-repeat -3px -355px;}
+header div.download ul.download3{background:url(images/index.png) no-repeat -3px -470px;}
+
+#list{margin-left:8%;margin-top:15px;width: 85.5%;height: 126px;}
+#list li{width: 24%;height: 120px;position:relative;float:left;margin-right:1%;}
+#list li img{width: 100%;}
+#list li a{display:block;width:100%;height:126px;background:rgba(0,0,0,0.5);position:absolute;left:0;top:0;opacity:0;transition:1s;font-size:16px;line-height:30px;text-align: center;}
+#list li a:hover{opacity: 1;transition: 1s;color:#CCC;}
+section{width: 100%;height:1630px;background:url(images/sectionbg.jpg);background-size:2000%;}
+#newnews{width:60%;height: 440px;border:1px solid #fff;margin-left: 8%;}
+#newnews span{display:block;font-size:14px;font-weight:bold;background: #ccc;margin-right:-4px;width:60px;height: 22px;float:left;padding:10px 106px;}
+#newnews span.on{color:#000;background:#ccc;border-bottom:4px solid #f00;}
+#newnews div{width: 100%;height: 274px;border-top:2px solid #00f;display:none;}
+#newnews div.on{display:block;width: 98%;height: 380px;margin-top:10px;margin-left:1%;}
+#newnews div.on ul#boxyx{width: 14% ;height:340px;margin-top:36px;font-size:16px;line-height:30px;text-align:center;cursor: pointer;color:#fff;font-weight:bold;background:url(images/196.jpg) no-repeat;background-size: 150%;
+overflow: hidden;z-index:-5;}
+#newnews div.on ul#boxyx li{color:#fff;}
+#newnews div.on ul#boxyx li{color:#fff;width: 100%;height: 30px;font-size: 16px;margin-top:10px;letter-spacing: 6px;}
+#newnews div.on ul#boxyx li:hover{background: purple;color:#fff;padding-left:20px;font-size:18px;box-shadow: 2px 2px 4px;}
+#newnews div.on ul.yxtx{width: 87%;margin-left:15%;height: 340px;margin-top:-341px;}
+#newnews div.on ul.yxtx li{width: 24%;height: 50%;float:left;margin-right:5px;}
+#newnews div.on ul.yxtx li img{width: 100%;height: 120px;}
+#newnews div.on ul.yxtx li img:hover{background:#000;opacity:0.8;}
+#newnews div.on ul.yxtx a{color:#000;font-size: 12px;}
+#newnews div.on ul.yxtx a:hover{color:#f00;}
+section div{float:left;}
+section div.zxtp{width:22%;height: 440px;margin-left:3%;}
+section div.zxtp ul.titzxtp{width: 100%;height: 42px;background:#ccc;}
+section div.zxtp ul.titzxtp li{width:90%;margin-left:5%;font-weight:bold;font-size:20px;line-height:42px;color:#000;letter-spacing:2px;
+cursor: pointer;}
+section div.zxtp ul{width:100%;height:188px;}
+section div.zxtp ul li.zxtptp{width: 90%;height: 150px;overflow: hidden;margin-left:5%;margin-top:10px;}
+section div.zxtp ul li.zxtptp img{width: 100%;height: 100%;transition:2s;}
+section div.zxtp ul li.zxtptp img:hover{transform:scale(1.2);transition:2s;}
+section div.zxtp ul li.zxtpwz{width:90%;height:38px;margin-left:5%;line-height:19px;color:#000;font-weight: bold;font-size:15px;}
+section div.zxtp ul li.zxtpwz span{font-size: 13px;color:#00f;}
+/*头像*/
+section div.cyyx{width: 47%;margin-left:8%;border:3px ridge #0f0;height: 300px;margin-top:16px;cursor: pointer;}
+
+section div.cyyx ul.bigtu{width: 100%;height: 300px;overflow: hidden;}
+section div.cyyx ul.bigtu img{width: 100%;height: 420px;}
+section #lbdx li{float:left;width: 70px;text-align: center;height: 70px;margin-right:9px;margin-top:10px;}
+section #lbdx li img{width: 100%;height: 100%;}
+section div.zidongli{width: 38%;height: 540px;margin-left:2%;border:1px solid #000;margin-top:14px;}
+/* photowall */
+section div.photowall{width: 92%;margin-left: 5%;}
+section div.photowall h1{font-size:25px;letter-spacing:10px;width: 100%;text-align: center;font-weight:bold;height: 50px;line-height: 50px;color:#f00;margin-top: 15px;}
+section div.photowall ul.container{width:1100px;height: 450px;margin:10px auto;position:relative;border:10px ridge #0f0;background:#ccc;}
+section div.photowall ul.container img.pic{width: 200px;padding: 10px 10px 15px;background:#fff;border:1px solid #ddd;box-shadow:2px 2px 3px rgba(50,50,50,0.4);z-index: 1;position: absolute;transition:all 0.5s ease-in;}
+
+section div.photowall ul.container img.pic1{left: 5px;top:7px;transform: rotate(10deg);-webkit-transform:rotate(10deg);-moz-transform:rotate(10deg);}
+section div.photowall ul.container img.pic2{left: 110px;top:19px;transform: rotate(-10deg);-webkit-transform:rotate(-10deg);-moz-transform:rotate(-10deg);} 
+section div.photowall ul.container img.pic3{right: 15px;top:20px;transform: rotate(-16deg);-webkit-transform:rotate(-16deg);-moz-transform:rotate(-16deg);}
+section div.photowall ul.container img.pic4{left: 380px;top:10px;transform: rotate(-15deg);-webkit-transform:rotate(-15deg);-moz-transform:rotate(-15deg);}
+section div.photowall ul.container img.pic5{right: 190px;top:6px;transform: rotate(12deg);-webkit-transform:rotate(12deg);-moz-transform:rotate(12deg);}
+section div.photowall ul.container img.pic6{left:300px;top:160px;transform: rotate(-9deg);-webkit-transform:rotate(-9deg);-moz-transform:rotate(-9deg);}
+section div.photowall ul.container img.pic7{left: 520px;top:190px;transform: rotate(12deg);-webkit-transform:rotate(12deg);-moz-transform:rotate(12deg);}
+section div.photowall ul.container img.pic8{right:80px;top:140px;transform: rotate(35deg);-webkit-transform:rotate(35deg);-moz-transform:rotate(35deg);}
+section div.photowall ul.container img.pic9{left:15px;top:250px;transform: rotate(-23deg);-webkit-transform:rotate(-23deg);-moz-transform:rotate(-23deg);}
+section div.photowall ul.container img.pic10{left:405px;top:280px;transform: rotate(26deg);-webkit-transform:rotate(26deg);-moz-transform:rotate(26deg);}
+section div.photowall ul.container img:hover{box-shadow: 15px 15px 20px rgba(50,50,50,0.4);transform:rotate(0deg) scale(1.30);z-index:2;-webkit-transform:rotate(0deg) scale(1.30);-moz-transform:rotate(0deg) scale(1.30);}
+footer{width: 100%;height: 300px;border:1px solid #000;}
+footer div.footer1{width: 90%;height: 70px;margin-left:5%;margin-top:15px;}
+footer div.footer1 ul{float:left;}
+footer div.footer1 ul.footer11{width: 30%;height: 70px;}
+footer div.footer1 ul.footer11 li{width: 100%;height: 100%;background:url(images/spr.png) no-repeat 0 8px;}
+footer div.footer1 ul.footer12{width: 48%;height: 70px;}
+footer div.footer1 ul.footer12 li{width: 16.5%;height: 30px;float:left;margin-top:24px;}
+footer div.footer1 ul.footer13{width: 19%;height: 70px;margin-left:2%;}
+footer div.footer1 ul.footer13 li{width: 100%;height: 40px;line-height: 40px;margin-top:15px;font-size:18px;color:#00f;text-align: center;font-weight: bold;font-family: "微软雅黑";}
+footer div.footer2{width: 90%;height: 215px;margin-left: 5%;}
+footer div.footer2 ul{float:left;}
+footer div.footer2 ul.footer21{width:45%;height: 215px;}
+
+footer div.footer2 ul.footer22{width: 50%;height: 215px;margin-left:5%;}
+footer a{color:#000;}
+</style>
+</head>
+<body>
+<header>
+<div id="header1">
+<ul class="header11">
+<a href="#">
+<li><img src="images/logo.png" /></li>	
+</a>	
+</ul>
+<ul class="header12" id="nav">
+<a href="#"><li class="shouye"><p>官网首页<br /><span>HOME</span></p></li></a>
+<a href="#"><li><p>游戏资料<br /><span>DATA</span></p></li></a>
+<a href="#"><li><p>攻略中心<br /><span>RAIDERS</span></p></li></a>
+<a href="#"><li><p>赛事中心<br /><span>MATCH</span></p></li></a>
+<a href="#"><li><p>商城/合作<br /><span>STORE</span></p></li></a>
+<a href="#"><li><p>社区互动<br /><span>COMMUNITY</span></p></li></a>
+<a href="#"><li><p>玩家支持<br /><span>PLAYER</span></p></li></a>
+<li class="bg" id="bg1"></li>
+<div>
+<dl></dl>
+<dl>
+<a href="#"><dt>版本介绍</dt></a>
+<a href="#"><dt>游戏介绍</dt></a>	
+<a href="#"><dt>英雄资料</dt></a>
+<a href="#"><dt>爆料站</dt></a>
+<a href="#"><dt>故事站</dt></a>
+<a href="#"><dt>游戏壁纸</dt></a>	
+</dl>
+<dl>
+<a href="#"><dt>攻略中心</dt></a>
+<a href="#"><dt>英雄攻略</dt></a>	
+<a href="#"><dt>视频中心</dt></a>
+</dl>
+<dl>
+<a href="#"><dt>KPL职业联赛</dt></a>
+<a href="#"><dt>KCC王者冠军杯</dt></a>	
+<a href="#"><dt>KOC王者城市赛</dt></a>
+<a href="#"><dt>QGC联赛</dt></a>
+<a href="#"><dt>TGA大奖赛</dt></a>	
+<a href="#"><dt>WGC精英赛</dt></a>
+<a href="#"><dt>王者高效联赛</dt></a>
+</dl>
+<dl>
+<a href="#"><dt>周边商城</dt></a>
+<a href="#"><dt>王者信用卡</dt></a>	
+<a href="#"><dt>王者文化站</dt></a>	
+</dl>
+<dl>
+<a href="#"><dt>官方助手</dt></a>
+<a href="#"><dt>手Q部落</dt></a>	
+<a href="#"><dt>微信圈子</dt></a>
+<a href="#"><dt>官方微博</dt></a>
+<a href="#"><dt>微信公众号</dt></a>
+<a href="#"><dt>手Q订阅号</dt></a>
+</dl>
+<dl>
+<a href="#"><dt>成长守护平台</dt></a>
+<a href="#"><dt>健康系统</dt></a>	
+<a href="#"><dt>客服专区</dt></a>
+<a href="#"><dt>礼包兑换</dt></a>
+<a href="#"><dt>自助服务</dt></a>	
+</dl>
+</div>
+</ul>
+<script>
+//导航特效：
+		var oUl1=document.getElementById("nav");
+		var oLi11=oUl1.getElementsByTagName("li");
+		var oBg=oLi11[oLi11.length-1];
+		var iSpeed=0;
+		var timer=null;
+
+for(var i=0;i<oLi11.length;i++){
+   oLi11[i].onmouseover=function(){
+   startMovea(oBg,this.offsetLeft);}
+   oLi11[i].onmouseout=function(){
+   startMovea(oBg,oLi11[0].offsetLeft);
+}}	
+function startMovea(obj,iTarget){
+   clearInterval(obj.timer);
+   obj.timer = setInterval(function(){
+   iSpeed=(iTarget-obj.offsetLeft)/3;
+   iSpeed*=0.9;
+if(Math.abs(iSpeed)<1 && Math.abs(obj.offsetLeft-iTarget)<1){
+   obj.style.left=iTarget+'px';
+   clearInterval(obj.timer);
+}else{
+   obj.style.left=obj.offsetLeft+iSpeed+'px';
+}},20); }
+</script>
+
+<script>
+//导航二级菜单特效：
+  var oDiv21=document.getElementById("nav");
+  oDiv21.onmouseover=function(){
+  startMoveb(oDiv21,400);
+  }
+  oDiv21.onmouseout=function(){
+  startMoveb(oDiv21,86);
+  }
+  var oSpeed=0;
+  var height=50;
+  var timer=null;
+  function startMoveb(obj,iTarget){
+  clearInterval(obj.timer);
+  obj.timer = setInterval(function(){
+  oSpeed=(iTarget-height)/5;
+  oSpeed*=0.9;
+if(Math.abs(oSpeed)<50 && Math.abs(height-iTarget)<50){
+  obj.style.height=iTarget+'px';
+  clearInterval(obj.timer);
+}else{
+  height+=oSpeed;
+  obj.style.height=height+oSpeed+'px';
+}},40); }
+</script>
+
+<ul class="header13">
+<a href="假如有个弹出层.html">
+<li class="header131"></li>
+<li class="header132">
+欢迎登录<br />
+<span>登陆后查看游戏战绩</span>	
+</li>	
+</a>	
+</ul>
+<a href="#">	
+<li style="width: 200px;height: 200px;margin-left:42%;padding-top:340px"></li>
+</a>
+</div>
+<div id="playImages" class="play">
+  <ul class="big_pic">
+    <a class="mark_left" href="javascript:void"></a>
+    <a class="mark_right" href="javascript:void"></a>
+    <div class="prev"></div>
+    <div class="next"></div>
+    <div class="text">加载图片信息...</div>
+    
+    <div class="bg"></div>
+
+    <li style="z-index:1"><img src="images/1508852193.jpg" /></li>
+    <li><img src="images/xialabg.jpg" /></li>
+    <li><img src="images/1508922034.jpg" /></li>
+    <li><img src="images/0(8).jfif" /></li>
+    <li><img src="images/1508853390.jpg" /></li>
+    
+
+
+  </ul>
+  <div class="small_pic">
+    <ul>
+        <li><a href="javascript:void;">团战之夜</a></li>
+      <li style="opacity:1; filter:alpha(opacity:100);"><a href="javascript:void;">游园惊魂夜</a></li>
+      <li><a href="javascript:void;">冠军争霸赛</a></li>
+      <li><a href="javascript:void;">职业联赛</a></li>
+      <li><a href="javascript:void;">办理VIP</a></li>
+      <li><a href="javascript:void;">--------</a></li>
+      <li><a href="javascript:void;">--------</a></li>
+      <li><a href="javascript:void;">--------</a></li>      
+    </ul>
+  </div>
+  
+</div>
+<div id="news">
+<span class="ono">全部</span>
+<span class="ono3">新闻</span>
+<span class="ono3">公告</span>
+<span class="ono3">活动</span>
+<span class="ono3">赛事</span>
+<div class="ono">
+  <li class="ono1">周年庆版本活动公告</li>
+  <li>10月26日全服不停机公告<p>10月25日</p></li>
+  <li>“峡谷起源”版本活动公告<p>10月22日</p></li>
+  <li>10月20日体验服更新公告<p>10月20日</p></li>
+  <li>APP STORE下载缓慢及更新按钮未刷新问...<p>10月23日</p></li>
+  <li>关于“峡谷寻宝”不真实谣言公告<p>10月26日</p></li>
+  <li>论脑洞正确的打开方式？奇葩王者cos秀...<p>10月26日</p></li>
+  <li>玩王者荣耀？反而笑出了腹肌<p>10月26日</p></li>
+  <li></li> 
+</div>
+<div class="ono2">
+  <li class="ono1">【明星面对面】第14期：老帅...</li>
+  <li>10月28日《王者荣耀》“创意高地”平台...<p>10月25日</p></li>
+  <li>微赛事相关介绍（赏金联赛也在里面哦~）<p>10月25日</p></li>
+  <li>【王者电竞周刊】第四期：跨组赛QGhap...<p>10月25日</p></li>
+  <li>同人大赛评委DAZUI专访-最能打的百变...<p>10月25日</p></li>
+  <li>追寻“峡谷起源” 感受周年惊喜<p>10月24日</p></li>
+  <li>【峡谷寻宝】攻略：三步获取周年庆限定<p>10月24日</p></li>
+  <li>来看看高校玩家眼中的 “萌” 奇<p>10月24日</p></li>
+</div>
+<div class="ono2">
+  <li class="ono1">10月26日全服不停机公告</li>
+  <li>10月20日体验服更新公告<p>10月20日</p></li>
+  <li>APP STORE下载缓慢及更新按钮未刷新问...<p>10月23日</p></li>
+  <li>关于“峡谷寻宝”不真实谣言澄清公告<p>10月26日</p></li>
+  <li>微赛事相关介绍（赏金联赛也在里面哦~）<p>10月25日</p></li>
+  <li>10月24日体验服停机更新公告<p>10月24日</p></li>
+  <li>峡谷寻宝活动异常问题说明及补偿公告<p>10月24日</p></li>
+  <li>峡谷寻宝活动异常问题说明公告<p>10月24日</p></li> 
+</div>
+<div class="ono2">
+  <li class="ono1">周年庆版本活动公告</li>
+  <li>“峡谷起源” 版本活动公告<p>10月22日</p></li>
+  <li>梦奇的奇幻梦境即将开启！<p>10月26日</p></li>
+  <li>【峡谷寻宝】活动FAQ<p>10月23日</p></li>
+  <li>10月10日版本活动公告<p>10月9日</p></li>
+  <li>双节同庆，五大福利玩转国庆中秋！<p>9月30日</p></li>
+  <li>9月26日版本活动公告<p>9月25日</p></li>
+  <li>9月19日版本活动公告<p>9月18日</p></li> 
+</div>
+<div class="ono2">
+  <li class="ono1">《王者荣耀》高校联赛新增赛点...</li>
+  <li>论脑洞正确的打开方式？奇葩王者cos秀...<p>10月26日</p></li>
+  <li>玩王者荣耀？反而笑出了腹肌<p>10月26日</p></li>
+  <li>《王者荣耀》高校联赛南京大学站：巾帼...<p>10月26日</p></li>
+  <li>《王者荣耀》高校联赛河南大学站：谁说...<p>10月26日</p></li>
+  <li>震惊！王者段位上不去，最大的原因居然...<p>10月26日</p></li>
+  <li>电子竞技没有女朋友？我，四个！<p>10月26日</p></li>
+  <li>《王者荣耀》高校联赛山东体院站：新兴...<p>10月26日</p></li>
+</div>
+</div>  
+<script>
+var aNews=document.getElementById("news");
+var aSpan=aNews.getElementsByTagName("span");
+var aDiv=aNews.getElementsByTagName("div");
+var num=aSpan.length;
+for(m=0;m<aSpan.length;m++){
+aSpan[m].index=m;
+aSpan[m].onmouseover=function(){
+for(var k=0;k<aSpan.length;k++){//关所有
+aSpan[k].className="ono3";
+aDiv[k].className="ono2";}
+this.className="ono";//开一个
+aDiv[this.index].className="ono";
+//this.index实现了,分类标题oSpan和oDiv一一对应关系
+}}        
+</script>	
+<div class="download">
+<a href="#">
+<ul class="download1">
+<img src="images/aboutbg.gif" > 
+</ul>
+</a>
+<a href="#">
+<ul class="download2">
+</ul>
+</a>
+<a href="#">
+<ul class="download3">
+</ul> 
+</a>
+</div>
+<!-- 轮播下面的四张图片 -->
+<div id="list"><ul></ul></div>
+<script>
+var pics=["images/gfblz.jpg",
+          "images/yxzl.jpg",
+          "images/wzwhz.jpg",
+          "images/sszq.jpg"]
+var con=["官方爆料站<br />王者逆天翻盘，你不知道的小技巧<br />             大神操作集锦，技能还可以这么用<br />官方超值活动，参加就可以得奖哦",
+         "游戏资料<br />英雄各种小操作<br />装备还有小技能<br />技能另类小方法",
+         "王者文化站<br />王者视频讲解走A技巧<br />解说视频强行装X方法<br />黄金主播徘徊牛C之间",
+         "赛事专区<br />KPL职业联赛<br />KCC王者冠军杯<br />KOC王者城市赛"]
+var oDiv3=document.getElementById("list");
+var oUl=oDiv3.getElementsByTagName("ul");
+for(var i=0; i<pics.length; i++){
+oUl[0].innerHTML +='<li aos="flip-up"><img src="'+pics[i]+'" /><a href="#">'
+      +con[i]+'</a></li>';}
+</script>
+</header>	
+
+<section>
+<div id="newnews" aos="fade-up">
+<span class="on">英雄攻略</span>
+<span>赛事精品</span>
+<span>精品栏目</span>
+<div class="on">
+<ul id="boxyx">
+<li>选择英雄</li>
+<a href="#"><li>热门</li></a>
+<a href="#"><li>坦克</li></a>
+<a href="#"><li>战士</li></a>
+<a href="#"><li>刺客</li></a>
+<a href="#"><li>射手</li></a>
+<a href="#"><li>法师</li></a>
+<a href="#"><li>辅助</li></a>
+</ul> 
+
+<ul class="yxtx">
+<a href="#"><li><img src="images/sp1.jpg" />
+<p>杨戬视频集锦<br />
+   杨戬打野带节奏22杀5死
+</p>
+</li></a>
+<a href="#"><li><img src="images/sp2.jpg" />
+<p>橘右京视频集锦<br />
+   超神橘右京轻松单杀
+</p>
+</li></a>
+<a href="#"><li><img src="images/sp3.jpg" />
+<p>韩信视频集锦<br />
+   逆风韩信带节奏，轻松翻盘
+</p>
+</li></a>
+<a href="#"><li><img src="images/sp4.jpg" />
+<p>不知火舞视频集锦<br />
+   丝血不知火舞反杀宫本武藏
+</p>
+</li></a>
+<a href="#"><li><img src="images/sp5.jpg" />
+<p>KPL视频集锦<br />
+   KPL精彩比赛视频集锦
+</p>
+</li></a>
+<a href="#"><li><img src="images/sp6.jpg" />
+<p>王昭君视频集锦<br />
+   超高爆发加强力控制瞬秒ADC
+</p>
+</li></a>
+<a href="#"><li><img src="images/sp7.jpg" />
+<p>太乙真人视频集锦<br />
+   恐怖爆发，你看不懂的输出
+</p>
+</li></a>
+<a href="#"><li><img src="images/sp8.jfif" />
+<p>诸葛亮视频集锦<br />
+   这个诸葛亮不是一般的凶
+</p>
+</li></a>
+</ul>
+</div>
+<div>
+<ul id="boxyx">
+<li>选择比赛</li>
+<a href="#"><li>KPL</li></a>
+<a href="#"><li>KLCC</li></a>
+<a href="#"><li>LCK</li></a>
+<a href="#"><li>LPL</li></a>
+<a href="#"><li>LCS</li></a>
+<a href="#"><li>LOL</li></a>
+<a href="#"><li>EU</li></a>
+</ul> 
+
+<ul class="yxtx">
+<a href="#"><li><img src="images/sp8.jfif" />
+<p>诸葛亮视频集锦<br />
+   这个诸葛亮不是一般的凶
+</p>
+</li></a>
+<a href="#"><li><img src="images/sp1.jpg" />
+<p>杨戬视频集锦<br />
+   杨戬打野带节奏22杀5死
+</p>
+</li></a>
+<a href="#"><li><img src="images/sp2.jpg" />
+<p>橘右京视频集锦<br />
+   超神橘右京轻松单杀
+</p>
+</li></a>
+<a href="#"><li><img src="images/sp3.jpg" />
+<p>韩信视频集锦<br />
+   逆风韩信带节奏，轻松翻盘
+</p>
+</li></a>
+<a href="#"><li><img src="images/sp4.jpg" />
+<p>不知火舞视频集锦<br />
+   丝血不知火舞反杀宫本武藏
+</p>
+</li></a>
+<a href="#"><li><img src="images/sp5.jpg" />
+<p>KPL视频集锦<br />
+   KPL精彩比赛视频集锦
+</p>
+</li></a>
+<a href="#"><li><img src="images/sp6.jpg" />
+<p>王昭君视频集锦<br />
+   超高爆发加强力控制瞬秒ADC
+</p>
+</li></a>
+<a href="#"><li><img src="images/sp7.jpg" />
+<p>太乙真人视频集锦<br />
+   恐怖爆发，你看不懂的输出
+</p>
+</li></a>
+
+</ul> 
+</div>
+<div>
+  <ul id="boxyx">
+<li>选择栏目</li>
+<a href="#"><li>小智</li></a>
+<a href="#"><li>小苍</li></a>
+<a href="#"><li>MISS</li></a>
+<a href="#"><li>伊芙蕾雅</li></a>
+<a href="#"><li>小莫</li></a>
+<a href="#"><li>笑笑</li></a>
+<a href="#"><li>苏小妍</li></a>
+</ul> 
+
+<ul class="yxtx">
+
+<a href="#"><li><img src="images/sp2.jpg" />
+<p>橘右京视频集锦<br />
+   超神橘右京轻松单杀
+</p>
+</li></a>
+<a href="#"><li><img src="images/sp1.jpg" />
+<p>杨戬视频集锦<br />
+   杨戬打野带节奏22杀5死
+</p>
+</li></a>
+<a href="#"><li><img src="images/sp3.jpg" />
+<p>韩信视频集锦<br />
+   逆风韩信带节奏，轻松翻盘
+</p>
+</li></a>
+<a href="#"><li><img src="images/sp4.jpg" />
+<p>不知火舞视频集锦<br />
+   丝血不知火舞反杀宫本武藏
+</p>
+</li></a>
+<a href="#"><li><img src="images/sp5.jpg" />
+<p>KPL视频集锦<br />
+   KPL精彩比赛视频集锦
+</p>
+</li></a>
+<a href="#"><li><img src="images/sp6.jpg" />
+<p>王昭君视频集锦<br />
+   超高爆发加强力控制瞬秒ADC
+</p>
+</li></a>
+<a href="#"><li><img src="images/sp7.jpg" />
+<p>太乙真人视频集锦<br />
+   恐怖爆发，你看不懂的输出
+</p>
+</li></a>
+<a href="#"><li><img src="images/sp8.jfif" />
+<p>诸葛亮视频集锦<br />
+   这个诸葛亮不是一般的凶
+</p>
+</li></a>
+</ul> 
+</div>
+  </div>  
+<script>
+var bNews=document.getElementById("newnews");
+var oSpan2=bNews.getElementsByTagName("span");
+var oDiv2=bNews.getElementsByTagName("div");
+var num=oSpan2.length;
+for(i=0;i<oSpan2.length;i++){
+oSpan2[i].index=i;
+oSpan2[i].onmouseover=function(){
+for(var j=0;j<oSpan2.length;j++){//关所有
+oSpan2[j].className="";
+oDiv2[j].className="";}
+this.className="on";//开一个
+oDiv2[this.index].className="on";
+//this.index实现了,分类标题oSpan和oDiv一一对应关系
+}}        
+</script>
+<div class="zxtp">
+<ul class="titzxtp">
+<li>英雄/皮肤</li> 
+</ul>
+<ul aos="fade-down">
+<a href="#">
+<li class="zxtptp">
+<img src="images/198.jpg"> 
+</li></a>
+<li class="zxtpwz">
+新英雄:梦奇<br />
+<span>上线时间：2017-10-23</span>
+</li>
+</ul>
+<ul aos="fade-up">
+<a href="#">
+<li class="zxtptp">
+<img src="images/yyjhm.jpg"> 
+</li></a>
+<li class="zxtpwz">
+新皮肤:甄姬-游园惊梦<br />
+<span>上线时间：2017-10-23</span>
+</ul>
+</div>
+<div style="width: 40%;height:40px;margin-left:8%;margin-top:10px" aos="fade-up">
+<li style="font-weight:bold;color:#000;line-height:40px;font-size:22px;letter-spacing: 3px;">英雄风采</li> 
+</div>
+<div class="cyyx" aos="fade-up">
+<ul class="bigtu"><img src="images/g1.jpg"  id="big"/></ul>
+<ul id="lbdx">
+    <li><img src="images/zhenji.jpg" /></li>
+    <li><img src="images/zhaoyun.jpg" /></li>
+    <li><img src="images/zhuangzhou.jpg" /></li>
+    <li><img src="images/taiyizhenren.jpg" /></li>
+    <li><img src="images/zhongkui.jpg" /></li>
+    <li><img src="images/gaojianli.jpg" /></li>
+    <li><img src="images/yingzheng.jpg" /></li>
+    <li><img src="images/ake.jpg" /></li>
+    <li><img src="images/daji.jpg" /></li>
+    <li><img src="images/caocao.jpg" /></li>
+    <li><img src="images/lvbu.jpg" /></li>
+    <li><img src="images/zhugeliang.jpg" /></li>
+    <li><img src="images/luban.jpg" /></li>
+    <li><img src="images/direnjie.jpg" /></li>
+    <li><img src="images/zhangfei.jpg" /></li>
+    <li><img src="images/xiaoqiao.jpg" /></li>
+    <li><img src="images/anqila.jpg" /></li>
+     <li><img src="images/laofuzi.jpg" /></li>
+    <li><img src="images/niumo.jpg" /></li>
+    <li><img src="images/lulu.jpg" /></li>
+    <li><img src="images/kai.jpg" /></li>
+    <li><img src="images/wuzetian.jpg" /></li>
+    <li><img src="images/xiahouheng.jpg" /></li>
+    <li><img src="images/sunshangxiang.jpg" /></li>
+   
+
+</ul>
+</div>
+
+<script>
+var oBig=document.getElementById("big");  
+var oImg=document.getElementById("lbdx").getElementsByTagName("img");//#box---img
+
+for(var i=0;i<oImg.length;i++){
+  oImg[i].key=i;//自定义的属性  
+  oImg[i].onmouseover=function(){
+    var num=this.key+1;
+    oBig.src="images/g"+num+ ".jpg"
+    this.style.border="1px solid #000";
+  }
+    oImg[i].onmouseout=function(){
+    this.style.border="none";
+}
+}
+</script> 
+<div class="zidongli">
+  
+</div> 
+<div class="photowall">
+<a href="#"><h1>王者荣耀精选高品质cosplay秀</h1></a>
+<ul class="container" aos="fade-up">
+    <img src="images/cos1.jpg" class="pic pic1">
+    <img src="images/cos2.jpg" class="pic pic2">
+    <img src="images/cos3.jpg" class="pic pic3">
+    <img src="images/cos4.jpg" class="pic pic4">
+    <img src="images/cos5.jpg" class="pic pic5">
+    <img src="images/cos6.jpg" class="pic pic6">
+    <img src="images/cos7.jpg" class="pic pic7">
+    <img src="images/cos2.jpg" class="pic pic8">
+    <img src="images/cos9.jpg" class="pic pic9">
+    <img src="images/cos10.jpg" class="pic pic10">
+  </ul>
+</div>
+</section>
+<footer>
+<div class="footer1">
+<ul class="footer11">
+<a href="#">
+<li></li>
+</a>  
+</ul>
+<ul class="footer12">
+<a href="#">
+<li style="background:url(images/cooperative-bg.png) no-repeat 5px 0;"></li>  
+</a>
+<a href="#">
+<li style="background:url(images/cooperative-bg.png) no-repeat 5px -38px;"></li>
+</a>
+<a href="#">
+<li style="background:url(images/cooperative-bg.png) no-repeat 5px -74px;"></li> 
+</a>
+<a href="#">
+<li style="background:url(images/cooperative-bg.png) no-repeat 5px -110px;"></li>
+</a>
+<a href="#">
+<li style="background:url(images/cooperative-bg.png) no-repeat 5px -148px;"></li> 
+</a>
+<a href="#">
+<li style="background:url(images/cooperative-bg.png) no-repeat 5px -184px;"></li> 
+</a>
+</ul>
+<ul class="footer13">
+<a href="#">
+<li>更多合作媒体请点击查询</li>
+</a>
+</ul>
+</div>
+<div class="footer2">
+<ul class="footer21">
+<li style="font-weight: bold;font-size: 15px;color:#000;margin-top:18px;font-family: "微软雅黑";">温馨提示：本游戏适合16岁(含)以上玩家娱乐</li>
+<li style="font-size: 12px;margin-top:8px;line-height: 20px;height:40px;width: 100%;" >
+    抵制不良游戏&nbsp;
+    拒绝盗版游戏&nbsp;
+    注意自我保护&nbsp;
+    谨防受骗上当&nbsp;
+    适度游戏益脑&nbsp;
+    沉迷游戏伤身<br />
+    合理安排时间&nbsp;
+    享受健康生活</li>
+<li style="font-size: 12px;margin-top:8px" >
+《王者荣耀》全部背景故事发生于架空世界“王者大陆”中。相关人物、地理、事件均为艺术创作，并非正史。若因观看王者故事对相关历史人物产生兴趣，建议查阅正史记载。</li> 
+</ul>
+<ul class="footer22">
+<a href="#">
+<li style="font-size: 12px;width: 100%;height: 20px;line-height: 20px;margin-top: 46px;">
+    腾讯互动娱乐 | 
+    服务条款 | 
+    广告服务 | 
+    腾讯游戏招聘 | 
+    腾讯游戏客服 | 
+    游戏地图 | 
+    游戏活动 | 
+    商务合作 | 
+    网站导航
+</li></a>
+<a href="#">
+<li style="width: 100%;height: 20px;line-height:20px;">
+  COPYRIGHT © 1998 – 2017 TENCENT. ALL RIGHTS RESERVED.
+  <span style="float:right;">腾讯公司 版权所有</span>
+</li></a>
+<a href="#">
+<li style="line-height: 20px;margin-top:8px;font-size: 12px;">
+粤网文[2017]6138-1456号 & ISBN 978-7-7979-8408-9 | 新出网证（粤）字010号 | 文网游备字[2016]M-CSG 0059
+批准文号：新广出审[2017] 6712号 | 全国文化市场统一举报电话：12318 
+</li></a> 
+</ul>
+</div>
+
+</footer>
+<script>
+  //全局初始化 
+  AOS.init({
+  ease:'ease-out-back',duration:1000
+  });
+    
+  </script>
+</body>
+</html>

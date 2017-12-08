@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link rel="stylesheet" href="css/aos.css">
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/aos.js"></script>
+	<script src="js/ease-my.js"></script>
+    
+    <script src="js/jquery.min.js"></script>
+    <style>
+    *{margin:0;padding:0;}
+    li{list-style: none;}
+    body{position: relative;width:100%;}
+    div.allbg img{width: 100%;height: 100%;position:fixed;right:0;bottom:0;z-index: -999;}
+    div.rLeft{width: 20%;height:500px;margin-left:20px;display: none;}
+    div.rLeft img{width: 250px;height: 340px;margin-top:240px;}
+    div.rRight{width: 18.5%;height:500px;display: none;}
+    div.rRight img{width: 250px;height: 280px;margin-top:220px;}
+    div.midcon{width:64%;height: 640px;margin-left:20px;}
+    div.midcon ul.conleft{width: 30%;height: 85%;margin-top:5%;}
+    div.midcon ul.conright{width: 35%;height: 85%;margin-top:5%;}
+    div.midcon ul.concon{width: 28%;height: 85%;margin-top:5%;margin-left:36%;}
+    div.midcon li.con1{width: 80%;height: 32%;margin-left:18%;background:url(images/tiyan_index.png) no-repeat 10px -2px;overflow: hidden;background-size:178%;display:none;}
+    div.midcon li.con1 img{width: 200%;height: 100%;margin-left:-100%;transition:0.3s;}
+    div.midcon li.con1 img:hover{opacity:0;transition: 0.3s;}
+    div.midcon li.con2{width: 60%;height: 27%;margin-left:-20px;margin-top:-30px;background:url(images/zhutiqu_index.png) no-repeat -8px -10px;overflow: hidden;background-size:200%;display:none;}
+    div.midcon li.con2 img{width: 220%;height: 110%;margin-left:-120%;transition:0.3s;margin-top:-10%;}
+    div.midcon li.con2 img:hover{opacity:0;transition: 0.3s;}
+    div.midcon li.con3{width: 60%;height: 27%;margin-left:25%;margin-top:-20px;background:url(images/chuangyi_index.png) no-repeat 4px -3px;overflow: hidden;background-size:190%;display:none;}
+    div.midcon li.con3 img{width: 200%;height: 100%;margin-left:-100%;transition:0.3s;}
+    div.midcon li.con3 img:hover{opacity:0;transition: 0.3s;}
+    div.midcon li.con4{width: 60%;height: 27%;margin-left:60%;margin-top:-30px;background:url(images/baitai_index.png) no-repeat 4px -3px;overflow: hidden;background-size:190%;display:none;}
+    div.midcon li.con4 img{width: 200%;height: 100%;margin-left:-100%;transition:0.3s;}
+    div.midcon li.con4 img:hover{opacity:0;transition: 0.3s;}
+
+    div.midcon li.con5{width: 70%;height: 32%;background:url(images/fuli_index.png) no-repeat 10px -2px;overflow: hidden;background-size:180%;display:none;}
+    div.midcon li.con5 img{width: 200%;height: 100%;margin-left:-100%;transition:0.3s;}
+    div.midcon li.con5 img:hover{opacity:0;transition: 0.3s;}
+
+    div.midcon li.con6{width: 50%;height: 27%;margin-left:40%;margin-top:-30px;background:url(images/cos_index.png) no-repeat 3px -2px;overflow: hidden;background-size:190%;display: none;}
+    div.midcon li.con6 img{width: 200%;height: 100%;margin-left:-100%;transition:0.3s;}
+    div.midcon li.con6 img:hover{opacity:0;transition: 0.3s;}
+
+    div.midcon li.con7{width: 55%;height: 27%;margin-left:15%;margin-top:-20px;background:url(images/tuanzhan_index.png) no-repeat 8px 0;overflow: hidden;background-size:175%;display:none;}
+    div.midcon li.con7 img{width:180%;height: 100%;margin-left:-85%;transition:0.3s;}
+    div.midcon li.con7 img:hover{opacity:0;transition: 0.3s;}
+    div.midcon li.con8{width: 50%;height: 27%;margin-left:-15%;margin-top:-30px;background:url(images/hezuo_index.png) no-repeat 4px -3px;overflow: hidden;background-size:190%;display:none;}
+    div.midcon li.con8 img{width: 200%;height: 100%;margin-left:-100%;transition:0.3s;}
+    div.midcon li.con8 img:hover{opacity:0;transition: 0.3s;}
+    div.midcon ul.concon li.con11{width: 100%;height: 30%;margin-top:-12%;}
+    div.midcon ul.concon li.con12{width: 100%;height: 50%;}
+    div.midcon ul.concon li.con12 img{width: 120%;height: 90%;margin-top:10%;margin-left:-10%;animation: a infinite 3s;}
+    @keyframes a{
+        0%{ -webkit-transform: scale(0.8); 
+            transform: scale(0.8);}
+        100%{-webkit-transform: scale(1);
+            transform: scale(1);}
+        
+    }
+    </style>
+</head>0
+<body>
+<!-- 全局背景 -->
+<div class="allbg">
+<img src="images/indexBg.jpg" >		
+</div>
+
+<!-- 左侧人物+隐隐出现 -->
+<div class="rLeft" style="float:left;">
+<ul><li>
+<img src="images/index_tagL.png" >
+</li></ul>
+</div>
+<script>
+$(function(){
+$('.rLeft').slideDown(2000);	
+});	
+</script>
+
+<!-- 右侧人物 +向下滑动出现-->
+<div class="rRight" style="float:right;">
+<ul><li>
+<img src="images/index_tagR.png" >
+</li></ul>	
+</div>
+<script>
+$(function(){
+$('.rRight').slideDown(2000);	
+});	
+</script>
+
+<!-- 中间部分 -->
+<div class="midcon" style="margin:0 auto;" >
+<!-- 中间部分....左侧 -->
+<ul class="conleft" style="float:left;">
+
+<a href="#"><li class="con1">
+<img src="images/tiyan_index.png" />	
+</li></a>
+
+<a href="#"><li class="con2">
+<img src="images/zhutiqu_index.png" />
+</li></a>
+
+<a href="#"><li class="con3">
+<img src="images/chuangyi_index.png" />	
+</li></a>
+
+<a href="#"><li class="con4">
+<img src="images/baitai_index.png" />
+</li></a>	
+</ul>
+<script>
+$(function(){
+$('.conleft .con1').fadeIn(2000);
+$('.conleft .con2').fadeIn(4000);
+$('.conleft .con3').fadeIn(6000);
+$('.conleft .con4').fadeIn(7000);
+});	
+</script>
+<!-- 中间部分....右侧 -->
+<ul class="conright" style="float:right">
+
+<a href="#"><li class="con5">
+<img src="images/fuli_index.png" />	
+</li></a>
+
+<a href="#"><li class="con6">
+<img src="images/cos_index.png" />
+</li></a>
+
+<a href="#"><li class="con7">
+<img src="images/tuanzhan_index.png" />
+</li></a>
+
+<a href="#"><li class="con8">
+<img src="images/hezuo_index.png" />
+</li></a>	
+</ul>
+<script>
+$(function(){
+$('.conright .con5').fadeIn(2000);
+$('.conright .con6').fadeIn(4000);
+$('.conright .con7').fadeIn(6000);
+$('.conright .con8').fadeIn(7000);
+});	
+</script>
+<!-- 中间部分....中间内容 -->
+<ul class="concon">
+<li class="con11">
+<img src="images/logo(2).png">  
+</li>
+<li class="con12">
+<img src="images/index_cont.png">    
+</li>	
+</ul>
+	
+</div>
+<script>
+    //全局初始化 
+    AOS.init({
+    /*ease:'ease-in-cubic',*/
+
+    duration:3000,
+    iteration:10
+    });
+        
+    </script>
+
+</body>
+</html>

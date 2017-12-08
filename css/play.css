@@ -1,0 +1,25 @@
+
+
+.play{width: 500px; height: 320px; background:#000; ; font:12px Arial;margin-top:440px;margin-left:8%;}
+.play .big_pic{width: 500px; height: 260px; background:#222; border-bottom:1px solid #ccc; position:relative; overflow: hidden;}
+.play .big_pic li{width: 100%; height: 100%; position:absolute; left:0; top:0;  overflow:hidden;/*与JS中点小图切换大图配合使用,随高度显示图片*/}
+.play .big_pic li img{width: 100%;height: 100%;}
+
+.play .mark_left{width: 200px; height: 260px; background:#f00; position: absolute; left:0; top:0; z-index:3000; opacity:0; filter:alpha(opacity:0);}
+.play .mark_right{width: 200px; height: 260px; background:#0f0; position: absolute; right:0; top:0; z-index:3000; opacity:0; filter:alpha(opacity:0);}
+.play .prev{width: 60px; height: 60px; background:url(../images/btn.gif) no-repeat; position:absolute; left:10px; top:100px; z-index:3001; opacity:0; filter:alpha(opacity:0); cursor: pointer;}
+.play .next{width: 60px; height: 60px; background:url(../images/btn.gif) no-repeat 0 -60px; position:absolute; right :10px; top:100px; z-index:3001; opacity:0; filter:alpha(opacity:0); cursor: pointer;}
+.play .text{position:absolute; top:300px; left:10px; z-index:3000; color:#ccc;}
+.play .length{position:absolute; top:240px; right:10px; z-index:3000; color:#ccc;}
+.play .bg{width: 600px; height: 25px; position:absolute; left:0; bottom:0; z-index: 2999; background:rgba(0,0,0,.6);}
+
+.play .small_pic{width: 500px; height: 40px; background:#0f0; position:relative;  top:7px;overflow: hidden;}
+.play .small_pic ul{width:600px; height: 100%; position:absolute;}
+.play .small_pic ul li{width: 113px; height: 40px; float:left; padding-right:10px;  background:#000;color:#fff;}
+.play .small_pic ul li{width: 114px; height: 40px;line-height:40px;text-align: center;font-size:18px;}
+
+
+
+
+
+

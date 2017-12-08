@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/main3.js"></script>
+	<script src="js/main.js"></script>
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/aos.css">
+    <script src="js/aos.js"></script>
+<style>
+li{list-style: none;}
+header{width: 100%;height:880px;border:1px solid #000;background:url(images/wrap.jpg) no-repeat -230px -55px;background-size: 135%;}
+header div#dl ul{width: 45%;height: 100px;float:left;margin-top:20px;}
+header div#dl ul.dl1{margin-left:5%;}
+header div#dl ul.dl1 li img{margin-left:50px;margin-top:20px;}
+header div#dl ul.dl2 li{width: 100px;height: 50px;text-align: center;line-height:50px;letter-spacing:5px;float:right;font-size: 22px;color:#fff;margin-top:30px;animation: aa infinite 3s;}
+header div#dl ul.dl2 li:hover{color:#f00;}
+header div#pop{width: 100%;height: 100%;display:none;}
+header div#pop div.popbg{width: 100%;height: 100%;background:rgba(0,0,255,0.5);
+ position:fixed;left:0;top:0;}
+header div#pop div.popCon{width: 540px;height: 249px;background:url(images/pop2.png) no-repeat;position:fixed;left:33%;top:30%;}
+header div#pop div.popCon li.qdl{width: 150px;height:40px;margin-left:200px;font-size: 28px;font-weight:bold;color:#fff;letter-spacing: 15px;text-align: center;line-height: 40px;font-family: "微软雅黑";font-style:oblique;}
+header div#pop div.popCon li.qqdl{width: 45%;margin-left:5%;height:60px;margin-top:50px;background:url(images/login.png) no-repeat  10px -270px ;overflow: hidden}
+header div#pop div.popCon li.qqdl img{margin-top:-340px;margin-left:10px;transition:0.4s;}
+header div#pop div.popCon li.wxdl{width: 45%;margin-left:51%;height:66px;margin-top:-76px;background:url(images/login.png) no-repeat  -245px -262px ;overflow: hidden}
+header div#pop div.popCon li.wxdl img{margin-top:-332px;margin-left:-245px;transition:0.4s;}
+header div#pop div.popCon li img:hover{opacity: 0;transition:0.4s;}
+header div#pop div.popCon li.zbdl{width: 120px;height: 40px;border:1px solid #ccc;margin-left:400px;margin-top:50px;font-size:17px;letter-spacing: 5px;text-align: center;line-height:40px;font-family: "微软雅黑";color:#f00;font-weight:bold;background:#ccc;border-radius:20px;transition:0.2s;}
+header div#pop div.popCon li.zbdl:hover{font-size:21px;letter-spacing:6px;transition:0.2s;}
+header div#loog{width: 86%;height: 90px;margin-left:7%;margin-top:120px;}
+header div#loog img{width: 80%;height: 70px;margin-top: 10px;margin-left:10%;}
+header div#yuyue{width: 70%;height: 60px;margin-left:15%;font-size:40px;color:#000;font-weight:bold;text-align: center;line-height: 60px;font-family:"微软雅黑 ";letter-spacing: 3px;}
+header div#yuyue span{color:#f00;}
+header div#ljyy{width: 100%;height:80px;}
+header div#ljyy li{width: 140px;height:80px;margin-left:47%;border:1px solid #fff;background:url(images/hezuo_cont.png) no-repeat;font-size: 24px;color:#fff;text-align:center;line-height: 80px;font-weight:bold;letter-spacing: 5px;font-family: "微软雅黑";font-style:italic;transition: 0.4s;border-radius: 30px;}
+header div#ljyy li:hover{background:url(images/hezuo_cont.png) no-repeat -360px 0;transition:0.4s;}
+header div#shu1{width: 12%;margin-left:5%;height: 420px;}
+header div#shu1 li{width: 100%;height:80px;margin-bottom: 18px;}
+header div#shu1 li.shu11{background:url(images/com.png) no-repeat -390px -200px;text-align:center;line-height:40px;font-size:25px;font-weight:bold;color:#fff;font-family: "微软雅黑";letter-spacing: 2px;}
+header div#shu1 li.shu12{background:url(images/com.png) no-repeat -160px -200px;}
+header div#shu1 li.shu12 p{width: 75%;height: 90%;margin-left:25%;font-size:20px;line-height:30px;font-weight:bold;color:#000;font-family: "微软雅黑";text-align: center;margin-top:10px;}
+header div#shu2{width:28%;height: 470px;margin-left:19%;margin-top:-470px;}
+header div#shu2 ul.shu21{width: 100%;height: 13%;border-top:1px solid #fff;background:url(images/c2_t_bg.png) no-repeat 40px 8px;}
+header div#shu2 ul.shu21 li{width: 60%;height: 38px;margin-top:8px;margin-left:15%;font-size:28px;color:#f00;font-weight:bold;text-align: center;line-height:38px;letter-spacing: 3px;font-family: "微软雅黑";}
+header div#shu2 ul.shu22{width: 100%;height: 29%;background:url(images/dj_bg1.png) no-repeat 10px 6px;background-size:90%;}
+header div#shu2 ul.shu22 li.shu221{width: 40%;height: 100%;}
+header div#shu2 ul.shu22 li.shu221 img{margin-top:12px;margin-left:22px;}
+header div#shu2 ul.shu22 li.shu222{width: 50%;height:32%;margin-left:40%;margin-top:-120px;color:#fff;text-align:center;line-height: 22px;font-size:18px;font-weight:bold;font-family:"微软雅黑";}
+header div#shu2 ul.shu22 li.shu223{width: 50%;height:20%;margin-left:40%;color:#fff;text-align:center;line-height: 25px;font-size:18px;font-weight:bold;font-family:"微软雅黑";background:url(images/hezuo_cont.png) no-repeat;background-size:100%;margin-top:8px;}
+header div#shu2 ul.shu22 li.shu224{width: 50%;height: 30%;margin-left:40%;color:#000;text-align:center;line-height: 36px;font-size:20px;font-weight:bold;font-family:"微软雅黑";letter-spacing: 2px;}
+
+header div#shu3{width:28%;height: 470px;margin-left:56%;margin-top:-470px;}
+header div#shu3 ul.shu21{width: 100%;height: 13%;border-top:1px solid #fff;background:url(images/c2_t_bg.png) no-repeat 40px 8px;}
+header div#shu3 ul.shu21 li{width: 60%;height: 38px;margin-top:8px;margin-left:15%;font-size:25px;color:#f00;font-weight:bold;text-align: center;line-height:38px;letter-spacing: 3px;font-family: "微软雅黑";}
+header div#shu3 ul.shu22{width: 100%;height: 29%;background:url(images/dj_bg1.png) no-repeat 10px 6px;background-size:90%;}
+header div#shu3 ul.shu22 li.shu221{width: 40%;height: 100%;}
+header div#shu3 ul.shu22 li.shu221 img{margin-top:12px;margin-left:22px;}
+header div#shu3 ul.shu22 li.shu222{width: 50%;height:32%;margin-left:40%;margin-top:-120px;color:#fff;text-align:center;line-height: 22px;font-size:18px;font-weight:bold;font-family:"微软雅黑";}
+header div#wxewm{width: 150px;height:321px;position:fixed;right:0;top:170px;background:url(images/right.png) no-repeat;}
+header div#wxewm li{width:100%;height: 100%;}
+
+
+
+
+
+
+
+
+
+
+
+@keyframes aa{60%{-webkit-transform: scale(0.8); -ms-transform:
+scale(0.8); -o-transform: scale(0.8); transform:scale(0.8) ;/*
+transform:scale(0.8);-webkit-transform: scale(0.8);
+*/}100%{-webkit-transform: scale(1); -ms-transform: scale(1);
+-o-transform:scale(1) ; transform:scale(1) ;}}
+</style>
+
+</head>
+<body>
+<header>
+<div id="dl">
+<ul class="dl1">
+<li><a href="#"><img src="images/logo(3).png"></a></li>
+</ul>
+<ul class="dl2">
+<a href="#"><li class="jump">登录</li></a>	
+</ul>
+</div>
+<div id="pop">
+<div class="popbg"></div>
+<div class="popCon">
+<li class="qdl">请登录</li>
+<a href="#"><li class="qqdl">
+<img src="images/login.png" />	
+</li></a>
+<a href="#"><li class="wxdl">
+<img src="images/login.png" />
+</li></a>
+<a href="#"><li class="zbdl jump">
+暂不登录</li></a>
+</div>
+</div>
+<script>
+	$(function(){
+	$('.wxdl').click(function(){
+		alert('恭喜亲爱的“文竹”召唤师，您已经白金一啦！不用登陆啦')
+	})	
+	});
+    $(function(){
+	$('.qqdl').click(function(){
+		alert('暂时未检测到您的账号存在')
+	})	
+	});
+
+</script>	
+<script>
+	$(function(){
+	$('.jump').click(function(){
+	$('#pop').fadeToggle(1000);	
+	});
+	
+	});
+	</script>
+<div id="loog">
+<ul>
+<li><img src="images/tit_1.png" /></li>
+</ul>	
+</div>
+<div id="yuyue">
+<ul>
+<li>预约即赠蛋糕碎片，<span>兑换惊喜好礼</span></li>
+</ul>	
+</div>
+<div id="ljyy">
+<ul>
+<li>立即预约</li>
+</ul>
+</div>
+<div id="shu1" >
+<ul >
+<a href="#"><li class="shu11">国庆狂欢<br /><span>9.30-10.8</span></li></a>
+<a href="#"><li class="shu12"><p>冲刺新赛季<br /><span>10.9-10.22</span></p></li></a>
+<a href="#"><li class="shu12"><p>新版本来袭<br /><span>10.23-10.26</span></p></li></a>
+<a href="#"><li class="shu12"><p>全民大狂欢<br /><span>10.27-10.31</span></p></li></a>
+</ul>
+<script>
+	$(function(){
+	$('#shu1 .shu12').click(function(){
+		alert("活动还没有开启，请到时间再来参加哦召唤师！")
+	});
+	});
+</script>	
+</div>
+<div id="shu2">
+<ul class="shu21">
+<li>国庆狂欢福利</li>
+</ul>
+<ul class="shu22">
+<a href="#"><li class="shu221"><img src="images/dj1.png" /></li></a>
+<li class="shu222">限定皮肤返厂票选<br />投票享试穿特权</li>
+<li class="shu223">立即投票</li>
+<li class="shu224">9.30-10.9</li>	
+</ul>
+<ul class="shu22">
+<a href="#"><li class="shu221"><img src="images/dj2.png" /></li></a>
+<li class="shu222" style="font-size:24px;line-height:30px;">貂蝉新皮肤<br />仲夏夜之梦</li>
+
+<li class="shu224" style="margin-top:25px;font-size:24px;">10.1-10.7</li>	
+</ul>
+<ul class="shu22">
+<a href="#"><li class="shu221"><img src="images/dj3.png" /></li></a>
+<li class="shu222" style="font-size:23px;line-height:30px;">登录送五级铭文<br />中秋头像框兑换</li>
+
+<li class="shu224" style="margin-top:25px;font-size:23px;">9.27-10.9</li>	
+</ul>	
+</div>
+
+<div id="shu3">
+<ul class="shu21">
+<li>周年狂欢福利预告</li>
+</ul>
+
+<ul class="shu22">
+<a href="#"><li class="shu221"><img src="images/dj4.png" /></li></a>
+<li class="shu222" style="font-size:25px;line-height:45px;">周年狂欢登录<br />送永久英雄</li>
+
+	
+</ul>
+
+<ul class="shu22">
+<a href="#"><li class="shu221"><img src="images/dj5.png" /></li></a>
+<li class="shu222" style="font-size:23px;line-height:45px;">峡谷寻宝狂欢<br />领取海量惊喜好礼</li>
+
+	
+</ul>	
+</div>
+<div id="wxewm" >
+<a href="#">
+<li></li>
+</a>	
+</div>
+</header>
+
+</body>
+</html>

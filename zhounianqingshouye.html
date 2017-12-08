@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/main3.js"></script>
+	<script src="js/main.js"></script>
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/aos.css">
+    <script src="js/aos.js"></script>
+<style>
+body{position: relative;}
+li{list-style: none;}
+div{width: 100%;height: 632px;}
+#adc{width: 100%;height: 632px;background: #000;position: relative; display:none;z-index:9999;}
+#adc li{width: 100px;height: 100px;text-align: center;line-height: 100px;font-size: 50px;color:yellow;position: absolute;right:0;top:0;cursor: pointer;background: rgba(0,0,0,0.4);}
+div#box{height: 3160px;}
+
+div.nav{width:100px;height: 250px;border:none;position: fixed;right:0;top:190px;background:url(images/nav-bg.png) no-repeat;z-index: 999;}
+div.nav ul{height: 200px;width: 100px;margin-top:25px;}
+div.nav ul li{width: 100%;height:40px;font-size:16px;text-align: center;line-height: 40px;color:#0f0;letter-spacing:3px;border-radius: 40px;}
+div.sc1{background: rgba(0,0,0,0.9);overflow: hidden;}	
+div.sc1 ul{width: 100%;height: 150px;position:absolute;top:0;}
+div.sc1 ul li{width:15%;height: 100%;float:left;}
+div.sc1 ul li.sc11{margin-left:35%;}
+div.sc1 ul li.sc12 img{width: 70%;height:70%;margin-left:15%;margin-top:10%;}
+div.sc1 ul li.sc13 img{float:right;height:70%;}
+
+div.sc2{background: url(images/rp2.jpg) no-repeat -100px 0;}
+div.sc2 ul.sc21{width: 55%;height: 100px;margin-left:20%;}
+div.sc2 ul li{float:left;}
+div.sc2 ul li.sc211{width:70%;height:100px;text-align: center;line-height:100px;font-weight: bold;color:#fff;font-size: 50px;font-family: "微软雅黑";}
+div.sc2 ul li.sc212{width: 25%;height: 40px;text-align:center;line-height:40px;font-weight: bold;color:#00f;font-size:20px;font-family: "微软雅黑";margin-top:30px;border:1px ridge #0f0;border-radius: 20px;background: #0f0;transition: 0.5s;}
+div.sc2 ul li.sc212:hover{color:#f00;background: #000;transition: 0.5s;}
+div.sc2 ul.sc22{width: 55%;height: 190px;margin-left:20%;border:5px ridge #0f0;}
+div.sc2 ul.sc22 li{float:left;overflow: hidden;}
+div.sc2 ul.sc22 li img{width: 100%;height: 100%;transition: 1s;}
+div.sc2 ul.sc22 li img:hover{transform: scale(1.2);transition:1s;}
+
+div.sc2 ul.sc22 li.sc221{width: 49%;height: 130px;}
+
+div.sc2 ul.sc22 li.sc222{width: 49%;height: 130px;margin-left:2%;}
+
+div.sc2 ul.sc22 li.sc223{width: 100%;height:50px;line-height:25px;font-size: 15px;color:#fff;margin-top:10px;}
+div.sc2 ul.sc23{width: 55%;height: 180px;margin-left:20%;border:5px ridge #0f0;}
+div.sc2 ul.sc23 li.sc231{width: 24%;height: 120px;float:left;margin-right:1%;}
+div.sc2 ul.sc23 li.sc231 img{width: 100%;height: 100%; }
+div.sc2 ul.sc23 li.sc231 img:hover{transform:rotatey(360deg);transition: 1s; }
+div.sc2 ul.sc23 li.sc232{width: 100%;height:40px;}
+div.sc2 ul.sc23 li.sc232{width: 100%;height:50px;line-height:25px;font-size: 15px;color:#fff;margin-top:10px;}
+div.sc2 ul.sc24{width: 55%;height: 130px;margin-left:20%;border:5px ridge #0f0;}
+div.sc2 ul.sc24 img{width: 100%;height: 130px;opacity:0.6;}
+div.sc2 ul.sc24 img:hover{opacity: 1;}
+
+div.sc3{background: url(images/rp3.jpg) no-repeat -320px 0;}
+div.sc3 ul{width: 55%;height: 126px;margin-left:30%;}
+div.sc3 ul.sc31 li.sc311{width: 100%;height: 80px;font-size:45px;font-weight: bold;color:#fff;letter-spacing: 30px;line-height: 80px;text-align: center;font-family: "微软雅黑";font-style:italic;}
+div.sc3 ul.sc31 li.sc312{width: 20%;height:40px;border:2px solid #0f0;border-radius:20px;background:#0f0;margin-left:38%;line-height:40px;text-align: center;color:#00f;font-size: 14px;font-weight: bold;font-style: italic;transition:1s;}
+div.sc3 ul.sc31 li.sc312:hover{background:#000;transition:1s;color:#f00;}
+div.sc3 ul.sc32 img{margin-top:50px;margin-left:70px;}
+div.sc3 ul.sc33 li{font-size:16px;font-weight:bold;color:#fff;line-height:26px;font-style:italic;letter-spacing: 1px;}
+div.sc3 ul.sc34 li{float:left;}
+div.sc3 ul.sc35 li{float:left;}
+div.sc3 ul.sc34 li.sc341{width: 16%;height: 80%;background:url(images/sp.png) no-repeat 10px -240px;margin-top:12px;}
+div.sc3 ul.sc34 li.sc342{width: 34%;height: 100%;color:#fff;font-weight:bold;line-height:15px;font-size:11px;font-family: "微软雅黑";}
+div.sc3 ul.sc34 li.sc343{width: 16%;height: 80%;background:url(images/sp.png) no-repeat -100px -240px;margin-top:12px;}
+div.sc3 ul.sc34 li.sc344{width: 34%;height: 100%;color:#fff;font-weight:bold;line-height:30px;font-size:11px;font-family: "微软雅黑";}
+div.sc3 ul.sc35 li.sc351{width: 16%;height: 80%;background:url(images/sp.png) no-repeat -210px -240px;margin-top:12px;}
+div.sc3 ul.sc35 li.sc352{width: 34%;height: 100%;color:#fff;font-weight:bold;line-height:15px;font-size:11px;font-family: "微软雅黑";}
+div.sc3 ul.sc35 li.sc353{width: 16%;height: 80%;background:url(images/sp.png) no-repeat -322px -240px;margin-top:12px;}
+div.sc3 ul.sc35 li.sc354{width: 34%;height: 100%;color:#fff;font-weight:bold;line-height:15px;font-size:11px;font-family: "微软雅黑";}
+div.sc4{background: url(images/rp4.jpg) no-repeat -160px 0;}
+div.sc4 ul.sc41{width: 55%;height: 120px;border:5px ridge #0f0;margin-left:5%;box-shadow: 8px 8px 16px;border-radius: 10px;}
+div.sc4 ul.sc41 li.sc411{width: 100%;height: 80px;font-size:45px;font-weight:bold;color:#0f0;text-align: center;line-height: 80px;letter-spacing:15px;}
+div.sc4 ul.sc41 li.sc412{width:50%;height:30px;font-size: 16px;font-weight: bold;line-height: 30px;text-align: center;letter-spacing: 5px;color:#0f0;margin-left:24%;background:rgba(0,0,0,0.8);border:3px solid #000;box-shadow: 8px 8px 16px;transition: 1.5s;}
+div.sc4 ul.sc41 li.sc412:hover{color:#f00;transition: 1.5s;}
+div.sc4 ul.sc42{width: 55%;margin-left: 5%;height: 80px;}
+div.sc4 ul.sc42 img{margin-left:90px;margin-top: 40px;}
+div.sc4 ul.sc43{width: 55%;height: 130px;margin-left:5%;}
+div.sc4 ul.sc43 p{display: outline;width: 30px;height: 30px;background:#0f0;line-height:30px;font-size:20px;text-align: center;color:#000;border-radius: 30px;}
+div.sc4 ul.sc43 span{margin-left:37px;color:#0f0;font-size:16px;font-weight:bold;letter-spacing: 2px;line-height:30px;text-align: center;}
+div.sc4 ul.sc43 span a{text-decoration: underline;margin-left:37px;}
+div.sc4 ul.sc43 span a:hover{color:#f00;}
+div.sc4 ul.sc44{width: 55%;height: 274px;margin-left:5%;}
+div.sc4 ul.sc44 p{display: outline;width: 30px;height: 30px;background:#0f0;line-height:30px;font-size:20px;text-align: center;color:#000;border-radius: 30px;}
+div.sc4 ul.sc44 span{margin-left:37px;color:#0f0;font-size:15px;font-weight:bold;letter-spacing:1px;line-height:30px;text-align: center;}
+div.sc5{background: url(images/rp2.jpg) no-repeat -100px 0;}
+div.sc5 ul{width: 35%;height: 100%;margin-left:10%;float:left;}
+div.sc5 ul.sc51 li.sc511{width: 100%;height: 60px;font-size:40px;font-weight:bold;font-family: "微软雅黑";line-height: 60px;text-align: center;color:#fff;letter-spacing:20px;}
+div.sc5 ul.sc51 li.sc512{width: 45%;height:30px;font-size:18px;line-height: 30px;text-align: center;margin-left:25%;background:rgba(0,0,0,0.6);}
+div.sc5 ul.sc51 li.sc513{width: 100%;height: 26px;font-size:15px;line-height: 26px;color:#fff;margin-top:5px;}
+div.sc5 ul.sc51 li.sc514{width: 100%;height:70px;font-size:17px;line-height:23px;color:#f00;letter-spacing:3px;margin-top:10px;}
+div.sc5 ul.sc51 li.sc515{width: 100%;height:170px;}
+div.sc5 ul.sc51 li.sc515 img{width: 60%;height: 100%;margin-left:10%;}
+div.sc5 ul.sc52 li.sc511{width: 100%;height: 60px;font-size:40px;font-weight:bold;font-family: "微软雅黑";line-height: 60px;text-align: center;color:#fff;letter-spacing:20px;}
+div.sc5 ul.sc52 li.sc512{width: 45%;height:30px;font-size:18px;line-height: 30px;text-align: center;margin-left:25%;background:rgba(0,0,0,0.6);}
+div.sc5 ul.sc52 li.sc513{width: 100%;height: 26px;font-size:15px;line-height: 26px;color:#fff;margin-top:5px;}
+div.sc5 ul.sc52 li.sc5151{width: 100%;height:220px;margin-top:50px;}
+div.sc5 ul.sc52 li.sc5152{width: 100%;height:220px;margin-top:14px;}
+div.sc5 ul.sc52 li.sc5151 img{width: 80%;height: 100%;margin-left:10%;}
+div.sc5 ul.sc52 li.sc5152 img{width: 80%;height: 100%;margin-left:10%;}
+
+div.nav ul li:hover{background:rgba(0,255,0,0.3);font-weight:bold;}
+footer{width: 100%;height: 300px;}
+footer div.footer1{width: 90%;height: 70px;margin-left:5%;margin-top:15px;}
+footer div.footer1 ul{float:left;}
+footer div.footer1 ul.footer11{width: 30%;height: 70px;}
+footer div.footer1 ul.footer11 li{width: 100%;height: 100%;background:url(images/spr.png) no-repeat 0 8px;}
+footer div.footer1 ul.footer12{width: 48%;height: 70px;}
+footer div.footer1 ul.footer12 li{width: 16.5%;height: 30px;float:left;margin-top:24px;}
+footer div.footer1 ul.footer13{width: 19%;height: 70px;margin-left:2%;}
+footer div.footer1 ul.footer13 li{width: 100%;height: 40px;line-height: 40px;margin-top:15px;font-size:18px;color:#00f;text-align: center;font-weight: bold;font-family: "微软雅黑";}
+footer div.footer2{width: 90%;height: 215px;margin-left: 5%;}
+footer div.footer2 ul{float:left;}
+footer div.footer2 ul.footer21{width:45%;height: 215px;}
+
+footer div.footer2 ul.footer22{width: 50%;height: 215px;margin-left:5%;}
+footer a{color:#000;}
+</style>
+
+</head>
+<body>
+<div id="adc" style="background:url(images/baiwei.jpg) no-repeat 0 -50px;background-size: 100%;"><li>X</li></div>
+<div id="box">
+<div class="nav" aos="fade-left">
+<ul>
+		<li id="newmap">新地图</li>
+		<li id="newhero">新英雄</li>
+		<li id="S9">S9赛季</li>
+		<li id="wsh">微赛事</li>
+		<li id="gTop">首页</li>
+	</ul>	
+</div>
+<script>
+		$(function(){
+			
+            //点击，返回顶部---能看到过程
+			$('#gTop').click(function(){
+            	var y=$(document).scrollTop();
+            	var timer=null;
+            	timer=setInterval(function(){
+            	    y=y-y*0.07;
+            	    if(y<5){
+            	    	clearInterval(timer);
+            	    	y=0;
+            	    }
+            		$(document).scrollTop(y);
+            	},50);
+            });
+            $('#newmap').click(function(){
+            	var y1=$(document).scrollTop();
+            	var timer=null;
+            	timer=setInterval(function(){
+            	    y1=y1-y1*0.07;
+            	    if(y1<637){
+            	    	clearInterval(timer);
+            	    	y1=632;
+            	    }
+            		$(document).scrollTop(y1);
+            	},50);
+            });
+             $('#newhero').click(function(){
+            	var y2=$(document).scrollTop();
+            	var timer=null;
+            	timer=setInterval(function(){
+            	    y2=y2-y2*0.07;
+            	    if(y2<1269){
+            	    	clearInterval(timer);
+            	    	y2=1264;
+            	    }
+            		$(document).scrollTop(y2);
+            	},50);
+            });
+              $('#S9').click(function(){
+            	var y3=$(document).scrollTop();
+            	var timer=null;
+            	timer=setInterval(function(){
+            	    y3=y3-y3*0.07;
+            	    if(y3<1901){
+            	    	clearInterval(timer);
+            	    	y3=1896;
+            	    }
+            		$(document).scrollTop(y3);
+            	},50);
+            });
+               $('#wsh').click(function(){
+            	var y4=$(document).scrollTop();
+            	var timer=null;
+            	timer=setInterval(function(){
+            	    y4=y4-y4*0.07;
+            	    if(y4<2533){
+            	    	clearInterval(timer);
+            	    	y4=2528;
+            	    }
+            		$(document).scrollTop(y4);
+            	},50);
+            });
+		});
+	</script>
+
+<!-- 第一屏幕 -->
+<div class="sc1 go">
+<video src="images/zhounianqing.mp4" loop="loop" autoplay="autoplay" style="margin-left:-150px;height: 850px;z-index:-999;"></video>
+<ul>
+<a href="#"><li class="sc11"><img src="images/logo.png" /></li></a>
+<a href="#"><li class="sc12"><img src="images/logo2.png" /></li></a>
+<a href="#"><li class="sc13" aos="fade-down"><img src="images/logo3.png" /></li></a>	
+</ul>	
+</div>
+<!-- 第二屏幕 -->
+<div class="sc2" aos="fade-up">
+<ul class="sc21" aos="fade-left">
+<li class="sc211">新地图全面升级</li>
+<a href="#"><li class="sc212">查看详细地图调整</li></a>	
+</ul>
+<ul class="sc22" aos="fade-left">
+<li class="sc221">
+<a href="#"><img src="images/pic-map1.jpg" /></a>
+</li>
+<li class="sc222">
+<a href="#"><img src="images/pic-map2.jpg" /></a>
+</li>
+<li class="sc223" aos="fade-left">
+全新的地图将红蓝双方的出生点差异化的更加明显。红色出生点是超智慧生命体的祭坛，原住民的圣地。多年后，大唐军队来到峡谷另一端。他们将遗落在峡谷中的上古机关搬到高地，重现长城锋芒。
+</li>
+</ul>
+<ul class="sc23" aos="fade-left">
+<a href="#"><li class="sc231"><img src="images/pic-map3.jpg" /></li></a>
+<a href="#"><li class="sc231"><img src="images/pic-map4.jpg" /></li></a>
+<a href="#"><li class="sc231"><img src="images/pic-map5.jpg" /></li></a>
+<a href="#"><li class="sc231"><img src="images/pic-map6.jpg" /></li></a>
+<li class="sc232" aos="fade-left">
+吸取来自主宰的力量，红蓝双色主宰先锋点燃两大力量对抗的高潮；强大的魔道能量使黑暗暴君也拥有着全然不同的体态。猩红魔种和苍蓝魔种，在新的地图中，魔种骨质和毛发更加突出，并拥有魔化变异的兽角。
+</li>	
+</ul>
+<ul class="sc24" aos="fade-left">
+<a href="#"><li class="sc241"><img src="images/pic-map7.jpg" /></li></a>
+</ul>	
+</div>
+<!-- 第三屏幕 -->
+<div class="sc3" aos="fade-up">
+<ul class="sc31" aos="fade-left">
+<li class="sc311">梦奇</li>
+<a href="#"><li class="sc312">更新版本后激萌上线</li></a>
+</ul>
+<ul class="sc32" aos="fade-right">
+<img src="images/line3.png" />	
+</ul>
+<ul class="sc33" aos="fade-left">
+<li>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;梦奇，游荡在起源之地附近的一种生灵。它们能自由的穿梭在梦中，并以往来旅人的噩梦为食。
+<br />
+&nbsp;&nbsp;&nbsp;
+不少人自称遇见过梦奇，但他们描述出的梦奇总是大相径庭。有人说，他遇见的梦奇如同欢耍<br />的小孩，四处穿梭奔跑，可爱至极。也有人说，他遇见的梦奇身长九尺，怪力加身，凶猛超过任<br />何野兽。</li>	
+</ul>
+<ul class="sc34" aos="fade-right">
+<li class="sc341"></li>
+<li class="sc342">
+被动技能——食梦<br />
+梦奇不断吞噬周围的噩梦，导致长胖，从最瘦到最胖总共会增长125点质量，耗时25秒。长胖会增加普攻和1、3技能范围，并提高物理攻击、物理和法术防御、自然回血值，但会大幅降低移动速度。使用技能会消耗噩梦，导致减肥。梦奇的每第三次普攻会横扫，相较前两次普攻造成更大范围更高伤害	
+</li>
+<li class="sc343"></li>
+<li class="sc344">
+技能1——梦境萦绕<br />
+梦奇消耗自身贮藏的噩梦，形成护盾，并在护盾生成瞬间对周围敌人造成法术伤害和持续1.5秒50%减速效果		
+</li>
+</ul>
+<ul class="sc35" aos="fade-up">
+<li class="sc351"></li>
+<li class="sc352">
+技能2——梦境挥洒<br />
+梦奇将噩梦盛装在容器中抛出，容器落地破碎造成法术伤害和30%减速，残留在地面的噩梦每0.5秒对处于其上的敌人造成一次法术伤害和30%减速效果。梦奇若触碰残留在地面的噩梦，便会将其回收。噩梦最多在地面残留5秒，场上同时可存在2团噩梦	
+</li>
+<li class="sc353"></li>
+<li class="sc354">
+技能3——梦境漩涡<br />
+梦奇将自身贮藏的噩梦向指定位置输送，在该位置制造一个不断变大的噩梦漩涡，每0.5秒对漩涡中的敌人造成法术伤害和50%减速效果。传输完成或传输期间主动施法都会使梦奇位移到漩涡中心，对当前漩涡尺寸区域造成法术伤害和1秒击飞效果。施法期间梦奇持续损失噩梦，并在成功传送后继承已经输送完成的噩梦。...	
+</li>
+</ul>	
+</div>
+<!-- 第四屏幕 -->
+<div class="sc4" aos="fade-up">
+<ul class="sc41" aos="fade-right">
+<a href="#"><li class="sc411">
+S9赛季规则解读
+</li></a>
+<a href="#"><li class="sc412">
+版本更新后S9赛季开启，帮抢功能上线
+</li></a>
+</ul>
+<ul class="sc42" aos="fade-right">
+<img src="images/line3.png" />	
+</ul>
+<ul class="sc43" aos="fade-right">
+<li>
+<p>A</p>
+<span>
+段位继承规则<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;新增星耀段位后，该赛季的段位继承规则也会有一定的变化咯！<br />
+<a href="#">
+点击查看段位继承规则>></a>	
+</span>	
+</li>	
+</ul>
+<ul class="sc44" aos="fade-right">
+<li>
+<p>B</p>
+<span>
+帮抢功能上线<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+我们设计了新的一套“帮抢”规则！具体规则如下：<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+一、当1、2楼处于选择英雄的环节时，3、4、5楼的队友可以发出帮抢的信号。此时1、2楼的界
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;面中，需要帮抢英雄的玩家头像将会显示为需要帮抢的英雄头像，并且同时出现“帮抢按钮”。
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+二、如果1、2楼玩家打算帮助下面楼层的玩家抢英雄，则可直接点击帮抢按钮，将会弹出提示框
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;提示玩家是否确认该行为（此时，对1、2楼玩家并没有需要拥有该英雄的要求）<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+三、当1、2楼玩家确认后，将默认已经帮助下面楼层的玩家完成了选英雄的操作，并且同时自动
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;完成了换位操作。
+	
+</span>	
+</li>		
+</ul>	
+</div>
+<!-- 第五屏幕 -->
+<div class="sc5" aos="zoom-in">
+<ul class="sc51" aos="fade-right">
+<li class="sc511">微赛事</li>
+<li class="sc512">版本更新后开始创建</li>
+<li class="sc513">作为公司领导，想在公司内团建时举办赛事？</li>
+<li class="sc513">作为职业战队，内部训练如何快捷上手？</li>
+<li class="sc513">作为主播解说，也想拉你的粉丝一起比赛？</li>
+<li class="sc513">希望微赛事系统，可以帮助希望通过举办赛事进行互动交流的大家！</li>	
+<li class="sc514">
+1原来的“赏金联赛”入口更替为“微赛事”，“微赛事”系统中主要包括了三个内容（面对面快速赛见右侧介绍）</li>
+<li class="sc514">
+2锦标赛：官方组织的各类赛事活动，现有的赏金联赛转移到这里，规则不变，后期会有新的锦标赛内容推出。	
+</li>
+<li class="sc514">
+3提供给玩家自行创建，传播和参与的比赛系统，方便玩家组织和参与线上的比赛。30级的玩家可以自由创建，6级以上的玩家可以自由组队与。
+<li class="sc515" aos="fade-up">
+<img src="images/pic5-1.jpg" />	
+</li>
+</li>
+</ul>
+<ul class="sc52" aos="fade-left">
+<li class="sc511">面对面快速赛</li>
+<li class="sc512">线下破冰好工具</li>
+<li class="sc513">面对面快速赛：一群人，面对面，不需要彼此加过好友，只需要4个相同的数字就可以快速来上一局。房间内提供有随机和按段位2种分组功能。</li>	
+<li class="sc5151" aos="fade-up">
+<img src="images/pic5-2.jpg" />	
+</li>
+<li class="sc5152" aos="fade-up">
+<img src="images/pic5-3.jpg" />	
+</li>	
+</ul>	
+</div>
+</div>
+<!-- 尾部 -->
+<footer>
+<div class="footer1">
+<ul class="footer11">
+<a href="#">
+<li></li>
+</a>  
+</ul>
+<ul class="footer12">
+<a href="#">
+<li style="background:url(images/cooperative-bg.png) no-repeat 5px 0;"></li>  
+</a>
+<a href="#">
+<li style="background:url(images/cooperative-bg.png) no-repeat 5px -38px;"></li>
+</a>
+<a href="#">
+<li style="background:url(images/cooperative-bg.png) no-repeat 5px -74px;"></li> 
+</a>
+<a href="#">
+<li style="background:url(images/cooperative-bg.png) no-repeat 5px -110px;"></li>
+</a>
+<a href="#">
+<li style="background:url(images/cooperative-bg.png) no-repeat 5px -148px;"></li> 
+</a>
+<a href="#">
+<li style="background:url(images/cooperative-bg.png) no-repeat 5px -184px;"></li> 
+</a>
+</ul>
+<ul class="footer13">
+<a href="#">
+<li>更多合作媒体请点击查询</li>
+</a>
+</ul>
+</div>
+<div class="footer2">
+<ul class="footer21">
+<li style="font-weight: bold;font-size: 15px;color:#000;margin-top:18px;font-family: "微软雅黑";">温馨提示：本游戏适合16岁(含)以上玩家娱乐</li>
+<li style="font-size: 12px;margin-top:8px;line-height: 20px;height:40px;width: 100%;" >
+    抵制不良游戏&nbsp;
+    拒绝盗版游戏&nbsp;
+    注意自我保护&nbsp;
+    谨防受骗上当&nbsp;
+    适度游戏益脑&nbsp;
+    沉迷游戏伤身<br />
+    合理安排时间&nbsp;
+    享受健康生活</li>
+<li style="font-size: 12px;margin-top:8px" >
+《王者荣耀》全部背景故事发生于架空世界“王者大陆”中。相关人物、地理、事件均为艺术创作，并非正史。若因观看王者故事对相关历史人物产生兴趣，建议查阅正史记载。</li> 
+</ul>
+<ul class="footer22">
+<a href="#">
+<li style="font-size: 12px;width: 100%;height: 20px;line-height: 20px;margin-top: 46px;">
+    腾讯互动娱乐 | 
+    服务条款 | 
+    广告服务 | 
+    腾讯游戏招聘 | 
+    腾讯游戏客服 | 
+    游戏地图 | 
+    游戏活动 | 
+    商务合作 | 
+    网站导航
+</li></a>
+<a href="#">
+<li style="width: 100%;height: 20px;line-height:20px;">
+  COPYRIGHT © 1998 – 2017 TENCENT. ALL RIGHTS RESERVED.
+  <span style="float:right;">腾讯公司 版权所有</span>
+</li></a>
+<a href="#">
+<li style="line-height: 20px;margin-top:8px;font-size: 12px;">
+粤网文[2017]6138-1456号 & ISBN 978-7-7979-8408-9 | 新出网证（粤）字010号 | 文网游备字[2016]M-CSG 0059
+批准文号：新广出审[2017] 6712号 | 全国文化市场统一举报电话：12318 
+</li></a> 
+</ul>
+</div>
+
+</footer>
+<script>
+	$(function(){
+     setTimeout(function(){
+     $('#adc').slideDown(1000);
+     },2000);
+
+     setTimeout(function(){
+     $('#adc').slideUp(1000);
+     },8000);	
+     
+	});
+
+	$('#adc li').click(function(){
+    $('#adc').slideUp(1000);
+	});
+	</script>	
+<script>
+	//全局初始化	
+	AOS.init({
+	ease:'ease-out-back',duration:2000
+	});
+		
+	</script>
+</body>
+</html>
